@@ -1,10 +1,13 @@
 version: 2
 
 models:
-  - name: bronze_sales
-    config:
-      materialized: table
-
   - name: bronze_date
     config:
       materialized: table
+
+  - name: bronze_sales
+    columns:
+      - name: sales_id
+        data_tests:
+          - unique
+          - not_null
